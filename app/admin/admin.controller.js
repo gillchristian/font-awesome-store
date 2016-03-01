@@ -55,9 +55,7 @@
 			 * 
 			 * @param {object} submit event
 			 */
-			function saveProduct(event){
-				event.preventDefault();
-				
+			function saveProduct(){
 				var index = vm.products.findIndex(function(product){
 					return product.id === vm.formProduct.id; 
 				});
