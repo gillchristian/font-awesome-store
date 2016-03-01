@@ -1,0 +1,35 @@
+{
+  "name": "crud",
+  "authors": [
+    "gillchristian <gillchristiang@gmail.com>"
+  ],
+  "description": "simple crud example",
+  "main": "app.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "javascript-litoral",
+    "meetup",
+    "crud",
+    "example",
+    "angular"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-bootstrap": "^1.1.2",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.2.18",
+    "components-font-awesome": "^4.5.0"
+  }
+}

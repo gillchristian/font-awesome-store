@@ -1,0 +1,73 @@
+<h2><em>Font Awesome Store</em> dashboard</h2>
+<hr>
+
+<div class="row">
+	<div class="col-md-6">
+		<table class="table table-hover">
+			<tr>
+					<th>Icono</th>
+					<th>Nombre</th>
+					<th>Descripcion</th>
+					<th>Precio</th>
+					<th>Stock</th>
+					<th></th>
+					<th></th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="product in admin.products track by product.id">
+					<td><i class="fa fa-2x" ng-class="product.icon"></i></td>
+					<td>{{product.name}}</td>
+					<td>{{product.desc}}</td>
+					<td>{{product.price | currency}}</td>
+					<td>{{product.stock}}</td>
+					<td><button type="button" class="btn btn-warning" ng-click="admin.editProduct(product)">Editar</button></td>
+					<td><button type="button" class="btn btn-danger" ng-click="admin.removeProduct(product)">Eliminar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-6">
+		<div class="jumbotron">
+			<form name="productForm" novalidate ng-submit="admin.saveProduct($event)">
+
+				<!-- icon -->
+				<div class="form-group row">
+					<div class="col-xs-6">
+						<label for="icon">Icono</label>
+						<select class="form-control" name="icon" id="icon" ng-model="admin.formProduct.icon" ng-options="icon for icon in admin.iconsList" required></select>
+					</div>
+					<div class="col-xs-6">
+						<i ng-show="admin.formProduct.icon" class="img-thumbnail fa fa-4x" ng-class="admin.formProduct.icon"></i>
+					</div>
+				</div>
+				<!-- name -->
+				<div class="form-group">
+					<label for="name">Nombre</label>
+					<input type="text" class="form-control" id="name" placeholder="Camara" ng-model="admin.formProduct.name" required>
+				</div>
+				<!-- desc -->
+				<div class="form-group">
+					<label for="desc">Descripcion</label>
+					<textarea class="form-control" name="desc" id="desc" placeholder="Nuevo icono de camaras" ng-model="admin.formProduct.desc" required></textarea>
+				</div>
+				<!-- price & stock -->
+				<div class="form-group row">
+					<div class="col-md-6">
+						<label for="price">Precio</label>
+						<input type="number" class="form-control" id="price" placeholder="50" min="0" ng-model="admin.formProduct.price" required>
+					</div>
+					<div class="col-md-6">
+						<label for="stock">En stock</label>
+						<input type="number" class="form-control" id="stock" placeholder="15" min="0" ng-model="admin.formProduct.stock" required>
+					</div>
+				</div>
+				<div class="pull-right">
+					<button type="submit" class="btn btn-primary" ng-show="admin.newProduct" ng-disabled="productForm.$invalid">Agregar</button>
+					
+					<button type="button" class="btn btn-warning" ng-click="admin.cancelForm()" ng-hide="admin.newProduct" ng-disabled="productForm.$invalid">Cancelar</button>
+					<button type="submit" class="btn btn-primary" ng-hide="admin.newProduct" ng-disabled="productForm.$invalid">Guardar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

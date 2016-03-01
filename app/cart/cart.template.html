@@ -1,0 +1,93 @@
+<h2>Bienvenido al <em>Font Awesome Store</em>!</h2>
+<button class="btn btn-warning pull-right" type="button" ng-click="vm.toggleCart()">
+	<i class="fa fa-shopping-cart fa-lg pull-right"></i> <span class="badge">{{vm.cartService.items()}}</span>
+</button>
+
+<br>
+<br>
+
+<!-- products -->
+<div class="grid">
+	<div class="grid-item" ng-repeat="product in vm.products | hideSoldOut track by product.id" ng-show="product.stock > 0">
+		<div class="grid-item-content">
+			
+			<div class="cartItem--heading">
+				<h3>{{product.name}}</h3>
+				<div class="img-thumbnail">
+					<i class="fa fa-3x" ng-class="product.icon"></i>
+				</div>
+			</div>
+			
+			<div class="cartItem--content">
+				<p><em>{{product.desc}}</em></p>
+				<p>En stock: {{ product.stock - vm.amounts[product.id] }}</p>
+				<p>Costo x Unidad: <span class="red">{{ product.price | currency }}</span></p>
+				<p>Costo total: <span class="green">{{ product.price * vm.amounts[product.id] | currency }}</span></p>
+			</div>
+			
+			<div class="cartItem--controlls">
+				<input class="form-control cartItem--add" type="number" ng-model="vm.amounts[product.id]"  min="0" max="{{product.stock}}">
+				<button class="btn btn-info" type="button" ng-click="vm.addToCart(product)" ng-disabled="!vm.amounts[product.id] || product.stock < 1">
+					<span class="fa fa-plus"> <span class="fa fa-shopping-cart"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- cart -->
+<div class="jumbotron cart" ng-show="vm.showCart">
+
+	<h3>Carrito</h3>
+	<hr>
+	<div ng-show="vm.cart.length">	
+		<table class="table table-hover">
+			<tr>
+				<th>Icono</th>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Unicad</th>
+				<th>Cantidad</th>
+				<th>Precio</th>
+			</tr>
+			<tbody>
+				<tr ng-repeat="item in vm.cart track by item.id">
+					<td><i class="fa fa-2x" ng-class="item.icon"></i></td>
+					<td>{{item.name}}</td>
+					<td>{{item.desc}}</td>
+					<td>{{item.price | currency}}</td>
+					<td>{{item.amount}}</td>
+					<td>{{item.amount * item.price | currency}}</td>
+				</tr>
+				<tr>
+					<th>Total</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th>{{ vm.cartService.items() }}</th>
+					<th class="green">{{ vm.cartService.price() | currency }}</th>
+				</tr>
+			</tbody>
+		</table>
+		
+		<br>
+		<div class="pull-right">
+			<button type="button" class="btn btn-danger" ng-click="vm.emptyCart()">Vaciar carrito</button>
+			<button type="button" class="btn btn-success" ng-click="vm.checkout()">Comprar</button>
+		</div>
+		
+	</div>
+	
+	<div class="alert alert-warning" role="alert" ng-show="!vm.cart.length && !vm.checkedout">
+		No has agregado ningun item al carrito!
+	</div>
+	
+	<div class="alert alert-success" role="alert" ng-show="vm.checkedout">
+		<b>
+			Gracias por tu compra!
+		</b>
+	</div>
+	
+</div>
+
+<div class="cartShadow" ng-show="vm.showCart" ng-click="vm.toggleCart()"></div>

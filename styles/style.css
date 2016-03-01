@@ -1,0 +1,89 @@
+body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: darkseagreen;
+}
+main{
+	flex: 1;
+}
+
+header{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid darkgreen;
+}
+
+footer{
+	background-color: lightgray;
+	padding: 15px 30px;
+	border-top: 1px solid gray;
+	
+}
+
+.cart {
+	position: fixed;
+	top: 50px;
+	z-index: 2;
+	right: 20%;
+	left: 20%;
+}
+
+.cartShadow{
+	background-color: rgba(0, 0, 0, .7);
+	z-index: 1;
+	top: 0;
+	right: 0;
+	left: 0;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.cartItem--heading {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cartItem--controlls {
+	display: flex;
+	justify-content: flex-end;	
+}
+
+.cartItem--add {
+	margin-right: 5px;
+	width: 30%;
+}
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.grid-item {
+	margin: 5px;
+	background-color: rgba(255, 255, 255, .4);
+	border-radius: 5px;
+	display: flex;
+	padding: 20px;
+	width: 24%;
+}
+
+.grid-item-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 5px;
+	width: 100%;
+}
+
+
+.green{
+	color: green;
+}
+
+.red{
+	color: darkred;
+}

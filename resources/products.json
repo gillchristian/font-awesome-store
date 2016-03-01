@@ -1,0 +1,34 @@
+[
+	{
+		"id": 1,
+		"name": "Camara",
+		"desc": "Retro camara",
+		"price": 5,
+		"amount": 3,
+		"icon": "fa-camera-retro"
+	},
+	{
+		"id": 2,
+		"name": "Jarro",
+		"desc": "",
+		"price": 15,
+		"amount": 1,
+		"icon": "fa-beer"
+	},
+	{
+		"id": 3,
+		"name": "The SARASA",
+		"desc": "the real sarasa product",
+		"price": 5,
+		"amount": 13,
+		"icon": "fa-bolt"
+	},
+	{
+		"id": 4,
+		"name": "no so sarasa",
+		"desc": "low quality sarasa product",
+		"price": 3.5,
+		"amount": 10,
+		"icon": "fa-check"
+	}
+]

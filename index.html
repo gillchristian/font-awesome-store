@@ -1,0 +1,75 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>e-commerce | ng-litoral</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="ecommerceApp">
+	
+	<!-- header -->
+	<header>
+		<div class="container">
+			<!-- navigation -->
+			<ul class="nav nav-pills">
+				<li ui-sref-active="active">
+					<a ui-sref="cart">Carrito</a>
+				</li>
+				<li ui-sref-active="active">
+					<a ui-sref="admin">Admin</a>
+				</li>
+			</ul>		
+		</div>
+	</header>
+	
+	<!-- main -->
+	<main class="container">
+		
+		<!-- dinamyc view -->
+		<div ui-view></div>
+	
+	</main>
+	
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<div class="pull-left">
+				<em><a href="http://www.meetup.com/js-Litoral/" target="_blank">JavaScript Litorarl - Meetup </a></em>
+				&#8226;
+				<em><a href="https://github.com/JavascriptLitoral" target="_blank"><i class="fa fa-code fa-lg"></i></a></em>
+			</div>
+			<div class="pull-right">
+				<em>por <a href="http://gillchristian.xyz" target="_blank">gillchristian</a></em>
+				<a href="http://twitter.com/gillchristian" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+				<a href="http://github.com/gillchristian" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+			</div>
+		</div>
+	</footer>
+		
+	<!-- angular -->
+	<script src='bower_components/angular/angular.min.js'></script>
+	<script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+	<script src='bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+	
+	<!-- app: main module -->
+	<script src='app/app.js'></script>
+	<script src='app/app.routes.js'></script>
+	
+	<!-- app: services module -->
+	<script src='app/services/services.module.js'></script>
+	<script src='app/services/icon.service.js'></script>
+	<script src='app/services/product.service.js'></script>
+	
+	<!-- app: cart module -->
+	<script src='app/cart/cart.module.js'></script>
+	<script src='app/cart/cart.service.js'></script>
+	<script src='app/cart/cart.controller.js'></script>
+	<script src='app/cart/cart.filter.js'></script>
+	
+	<!-- app: admin module -->
+	<script src='app/admin/admin.module.js'></script>
+	<script src='app/admin/admin.controller.js'></script>
+</body>
+</html>
