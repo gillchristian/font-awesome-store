@@ -1,0 +1,36 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "Encuentro 3: Intro a Angular - Martes 1ro de Marzo",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-jasmine": "^0.3.7"
+  },
+  "devDependencies": {
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.7"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gillchristian/font-awesome-store.git"
+  },
+  "keywords": [
+    "angular",
+    "font-awesome-store",
+    "javascript-litoral",
+    "meetup"
+  ],
+  "author": "gillchristian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gillchristian/font-awesome-store/issues"
+  },
+  "homepage": "https://github.com/gillchristian/font-awesome-store#readme"
+}
